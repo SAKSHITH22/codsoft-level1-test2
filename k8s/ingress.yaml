@@ -11,8 +11,7 @@ metadata:
     # nginx.ingress.kubernetes.io/ssl-redirect: "true"       # Uncomment when TLS is configured
     # nginx.ingress.kubernetes.io/force-ssl-redirect: "true"  # Uncomment when TLS is configured
     nginx.ingress.kubernetes.io/proxy-body-size: "1m"
-    nginx.ingress.kubernetes.io/rate-limit: "100"
-    nginx.ingress.kubernetes.io/rate-limit-window: "1m"
+    nginx.ingress.kubernetes.io/limit-rpm: "100"
     # Enable CORS
     nginx.ingress.kubernetes.io/enable-cors: "true"
     # TLS with cert-manager (uncomment and configure when ready)
