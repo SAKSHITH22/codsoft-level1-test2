@@ -8,9 +8,8 @@ metadata:
     environment: production
   annotations:
     # Nginx Ingress Controller annotations
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    # nginx.ingress.kubernetes.io/ssl-redirect: "true"       # Uncomment when TLS is configured
+    # nginx.ingress.kubernetes.io/force-ssl-redirect: "true"  # Uncomment when TLS is configured
     nginx.ingress.kubernetes.io/proxy-body-size: "1m"
     nginx.ingress.kubernetes.io/rate-limit: "100"
     nginx.ingress.kubernetes.io/rate-limit-window: "1m"
