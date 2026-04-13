@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: portfolio-website
+  namespace: portfolio
+  labels:
+    app: portfolio-website
+    environment: production
+  annotations:
+    # Nginx Ingress Controller annotations
+    # nginx.ingress.kubernetes.io/ssl-redirect: "true"       # Uncomment when TLS is configured
+    # nginx.ingress.kubernetes.io/force-ssl-redirect: "true"  # Uncomment when TLS is configured
+    nginx.ingress.kubernetes.io/proxy-body-size: "1m"
+    nginx.ingress.kubernetes.io/limit-rpm: "100"
+    # Enable CORS
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    # TLS with cert-manager (uncomment and configure when ready)
+    # cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  ingressClassName: nginx
+  # TLS configuration (uncomment and configure when ready)
+  # tls:
+  #   - hosts:
+  #       - portfolio.example.com
+  #     secretName: portfolio-tls-secret
+  rules:
+    - host: portfolio.example.com  # Replace with your actual domain
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: portfolio-website
+                port:
+                  name: http

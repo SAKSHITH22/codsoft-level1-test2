@@ -1,0 +1,34 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# Kubernetes
+k8s/
+
+# CI/CD
+Jenkinsfile
+.jenkins/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Documentation
+README.md
+LICENSE
+CHANGELOG.md
+
+# Misc
+*.log
+*.tmp
