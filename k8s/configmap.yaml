@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: portfolio-config
+  namespace: portfolio
+  labels:
+    app: portfolio-website
+    environment: production
+data:
+  NGINX_PORT: "8080"
+  ENVIRONMENT: "production"
+  LOG_LEVEL: "warn"
