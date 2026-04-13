@@ -171,7 +171,7 @@ pipeline {
                 sh '''
                     # Run Trivy scan if available
                     if command -v trivy > /dev/null 2>&1; then
-                        trivy image --severity HIGH,CRITICAL --exit-code 0 ${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG}
+                        trivy image --severity HIGH,CRITICAL --exit-code 1 ${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG}
                     else
                         echo "Trivy not installed, skipping security scan."
                         echo "Consider installing Trivy for container vulnerability scanning."
